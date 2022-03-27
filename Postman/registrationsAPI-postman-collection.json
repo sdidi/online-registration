@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "2779f9ce-6934-4f11-8ca1-c6b08b62990f",
+		"name": "RegistrationsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetRegistrations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/registrationapi/applicants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registrationapi",
+						"applicants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddApplicant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"    \"id\": 7811265834187,\r\n    \"firstName\": \"Sabre\",\r\n    \"lastName\": \"Didi\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/registrationapi/addapplicant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registrationapi",
+						"addapplicant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetApplicantByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "EditApplicant",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 7811255834189,\r\n    \"firstName\": \"Johns\",\r\n    \"lastName\": \"Tucks\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/registrationapi/editapplicant/7811255834189",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registrationapi",
+						"editapplicant",
+						"7811255834189"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteApplicant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/registrationapi/deleteapplicant/7811265834185",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"registrationapi",
+						"deleteapplicant",
+						"7811265834185"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
