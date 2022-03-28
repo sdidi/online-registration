@@ -38,6 +38,9 @@ Spring security, Lombok, Swagger OPEN-API for API documentation.
 ### Unit and Integration Test
 Unit tests and Integration tests have been done using JUnit5 and Mockito. Tested the service and controller layer.
 
+### Database 
+
+This project uses MySQL database to store entities. The schema used and configurations are given in the application.properties file.
 
 ### Validations
 
@@ -68,7 +71,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 Update an applicant and Delete an applicant.
 
-Included in the repository is the Postman Collection with API calls. 
+### Postman Collection
+
+Included in the repository is the Postman Collection (registrationsAPI-postman-collection.json) with API calls. 
+This json file can be download into your workstation and imported into Postman to run the api calls.
 
 
 
