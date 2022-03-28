@@ -31,7 +31,7 @@ timeframe.
 
 # Solution Specification:
 
-## Back-end Restful API has been implemented using SpringBoot with Spring Data, and supporting libraries such as the following:
+### Back-end Restful API has been implemented using SpringBoot with Spring Data, and supporting libraries such as the following:
 Spring security, Lombok, Swagger OPEN-API for API documentation.
 
 Unit tests and Integration tests have been done using JUnit5 and Mockito.
@@ -49,10 +49,13 @@ In the project directory: online-registration/registrations-app-ui, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-There are 2 Links: List of Applicants and Add Applicant on the navigation bar. The list has actions: 
+#### There are 2 Links: List of Applicants and Add Applicant on the navigation bar. The list has actions: 
+
 Update an applicant and Delete an applicant.
 
 Included in the repository is the Postman Collection with API calls. 
+
+### Validations
 
 ID validation has been done using Luhn algorithm that is used to validate SA id's. Only SA id is allowed to be persisted 
 and the validation is performed on the backend code. Then is handled on the front end where the form is displayed 
