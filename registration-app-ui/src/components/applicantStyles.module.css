@@ -1,0 +1,30 @@
+.mystyle {
+    background-color: #cdc0b0;
+    color: Red;
+    padding: 2px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.parastyle{
+    color: Green;
+    font-family: Arial;
+    font-size: 15px;
+    text-align: center;
+}
+
+.label {
+    color: Green;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+
+.starlabel label:after {
+    content:" *";
+    color: Red;
+}
