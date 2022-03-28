@@ -33,7 +33,13 @@ timeframe.
 
 ## Back-end Restful API 
 The backend has been implemented using SpringBoot with Spring Data, and supporting libraries such as the following:
-Spring security, Lombok, Swagger OPEN-API for API documentation.
+Spring security, Lombok, Swagger OpenAPI for API documentation.
+
+### OpenAPI Specification
+This project uses Swagger to document the APIs and this enables easy testing of the end points and to visual the models. To access this we use the the following links:
+http://localhost:8080/swagger-ui/index.html , expanded to http://localhost:8080/swagger-ui/index.html#/applicant-controller. 
+Can then select any of the 5 endpoints and tryit out and execute. 
+
 
 ### Unit and Integration Test
 Unit tests and Integration tests have been done using JUnit5 and Mockito. Tested the service and controller layer.
