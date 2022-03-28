@@ -31,12 +31,27 @@ timeframe.
 
 # Solution Specification:
 
-### Back-end Restful API has been implemented using SpringBoot with Spring Data, and supporting libraries such as the following:
+## Back-end Restful API 
+The backend has been implemented using SpringBoot with Spring Data, and supporting libraries such as the following:
 Spring security, Lombok, Swagger OPEN-API for API documentation.
 
-Unit tests and Integration tests have been done using JUnit5 and Mockito.
+### Unit and Integration Test
+Unit tests and Integration tests have been done using JUnit5 and Mockito. Tested the service and controller layer.
 
-# Frontend implements React JS
+
+### Validations
+
+ID validation has been done using Luhn algorithm that is used to validate SA id's. Only SA id is allowed to be persisted 
+and the validation is performed on the backend code. Then is handled on the front end where the form is displayed 
+with relevant errors. 
+
+Field validations are done on the front end to check if all fields are filled otherwise an error is displayed.
+
+### Exception Handling
+
+Exceptions handling has been done both on the backend and frontend. This checks validity of the input including the Invalid ID handling.
+
+## Frontend implements React JS
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -49,21 +64,11 @@ In the project directory: online-registration/registrations-app-ui, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-#### There are 2 Links: List of Applicants and Add Applicant on the navigation bar. The list has actions: 
+#### There are 2 Links: List of Applicants and Add Applicant on the navigation bar. The list has actions:
 
 Update an applicant and Delete an applicant.
 
 Included in the repository is the Postman Collection with API calls. 
-
-### Validations
-
-ID validation has been done using Luhn algorithm that is used to validate SA id's. Only SA id is allowed to be persisted 
-and the validation is performed on the backend code. Then is handled on the front end where the form is displayed 
-with relevant errors. 
-
-Field validations are done on the front end to check if all fields are filled otherwise an error is displayed.
-
-Exceptions handling has been done both on the backend and frontend.
 
 
 
