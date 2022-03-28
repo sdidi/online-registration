@@ -1,5 +1,6 @@
 package com.registrationonline.customerregistration.domain;
 
+import com.registrationonline.customerregistration.utilities.ValidationUtils;
 import io.swagger.annotations.*;
 import javax.persistence.*;
 import lombok.*;
@@ -24,5 +25,16 @@ public class Applicant
 	public String toString()
 	{
 		return "{ Id: "+id+" firname name: "+firstName+ " last name: "+lastName+" }";
+	}
+
+	public void setId( long id ) throws  Exception
+	{
+		if(ValidationUtils.isIdentityValid( id ))
+		{
+			this.id = id;
+		}
+		else {
+			throw new Exception("ID is not valid");
+		}
 	}
 }

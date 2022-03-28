@@ -33,7 +33,8 @@ public class ApplicantController
 			notes = " Provides an id to look up a specific applicant from the database",
 			response = Applicant.class)
 	public Applicant getApplicant(@ApiParam(value =" An Id you need to retrieve the Applicant", required = true)
-			@PathVariable Long id){
+			@PathVariable Long id) throws Exception
+	{
 		log.info( "This method gets the applicant with id: "+id );
 		return applicantService.findApplicantById( id );
 	}
@@ -54,7 +55,8 @@ public class ApplicantController
 	@ApiOperation( value =" Updates an existing applicant",
 			notes = " Updates an existing applicant and save in the database ",
 			response = Applicant.class)
-	public ResponseEntity updateApplicant(@PathVariable Long id, @RequestBody Applicant applicant){
+	public ResponseEntity updateApplicant(@PathVariable Long id, @RequestBody Applicant applicant) throws Exception
+	{
 		log.info( "This method updates the applicant with id: "+id );
 		Applicant currentApplicant = applicantService.updateApplicant( applicant, id );
 		return ResponseEntity.ok(currentApplicant);

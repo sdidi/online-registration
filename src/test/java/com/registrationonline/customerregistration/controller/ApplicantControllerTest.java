@@ -17,15 +17,15 @@ public class ApplicantControllerTest
 	@MockBean
 	private ApplicantService applicantService;
 
-	Applicant mockApplicant = new Applicant(8011255834187l,"David","Doe");
+	Applicant mockApplicant = new Applicant(8011165800086l,"David","Doe");
 	//passed
 	@Test
 	public void getAllApplicantsTest(){
 		List<Applicant> list = new ArrayList<>();
-		Applicant applicant1 = new Applicant(3456l,"Joe","Doe");
-		Applicant applicant2 = new Applicant(3457l,"Goe","Hyu");
-		Applicant applicant3 = new Applicant(3458l,"Iue","Jue");
-		Applicant applicant4 = new Applicant(3459l,"Man","Jue");
+		Applicant applicant1 = new Applicant(7701014800086l,"Joe","Doe");
+		Applicant applicant2 = new Applicant(7707014800083l,"Goe","Hyu");
+		Applicant applicant3 = new Applicant(6905124800081l,"Iue","Jue");
+		Applicant applicant4 = new Applicant(8410084800088l,"Man","Jue");
 
 		list.add( applicant1 );
 		list.add( applicant2 );
@@ -44,9 +44,10 @@ public class ApplicantControllerTest
 
 	//passed
 	@Test
-	public void getApplicantByIdTest(){
-		when(applicantService.findApplicantById( 8011255834187l )).thenReturn( mockApplicant );
-		Applicant applicant = applicantService.findApplicantById( 8011255834187l );
+	public void getApplicantByIdTest() throws Exception
+	{
+		when(applicantService.findApplicantById( 8011165800086l )).thenReturn( mockApplicant );
+		Applicant applicant = applicantService.findApplicantById( 8011165800086l );
 		assertEquals( "David",applicant.getFirstName() );
 		assertEquals( "Doe",applicant.getLastName() );
 
@@ -54,7 +55,7 @@ public class ApplicantControllerTest
 
 	@Test
 	public void createApplicantTest(){
-		Applicant applicant = new Applicant(8011255834187l,"David","Doe");
+		Applicant applicant = new Applicant(7701014800086l,"David","Doe");
 		applicantService.saveApplicant( applicant );
 		verify(applicantService, times( 1)).saveApplicant( applicant );
 	}

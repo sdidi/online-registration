@@ -20,16 +20,17 @@ public class ApplicantServiceTest
 	ApplicantRepository applicantRepository;
 
 	@Test
-	public void whenIdIsProvided_returnCorrectApplicant(){
-		Applicant applicant =  new Applicant(8011255834187l,"David","Doe");
-		doReturn( Optional.of( applicant)).when( applicantRepository).findById( 8011255834187l );
-		Applicant applicantFound = applicantService.findApplicantById( 8011255834187l );
+	public void whenIdIsProvided_returnCorrectApplicant() throws Exception
+	{
+		Applicant applicant =  new Applicant(8011165800086l,"David","Doe");
+		doReturn( Optional.of( applicant)).when( applicantRepository).findById( 8011165800086l );
+		Applicant applicantFound = applicantService.findApplicantById( 8011165800086l );
 		assertEquals( "David" ,applicantFound.getFirstName());
 	}
 
 	@Test
 	public void testCreateApplicant_usingMock(){
-		Applicant applicant =  new Applicant(8011255834187l,"David","Doe");
+		Applicant applicant =  new Applicant(8011165800086l,"David","Doe");
 		applicantRepository.save( applicant );
 		verify(applicantRepository, times( 1)).save( applicant );
 	}

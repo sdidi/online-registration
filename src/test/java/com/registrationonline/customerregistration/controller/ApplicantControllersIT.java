@@ -30,7 +30,7 @@ public class ApplicantControllersIT
 	private int port;
 	@Test
 	public void givenCorrectApplicantIdCheckIfCorrectDetailsAreRetrieved(){
-		long id = 7811265834187l;
+		long id = 8011165800086l;
 		HttpEntity<Applicant> entity = new HttpEntity<>(null, httpHeaders);
 		ResponseEntity<Applicant> applicantResponseEntity;
 		applicantResponseEntity = testRestTemplate.exchange(createURLWithPort("/applicants/"+id),
@@ -44,7 +44,7 @@ public class ApplicantControllersIT
 
 	@Test
 	public void givenInCorrectApplicantIdCheck_NoResultsRetrieved(){
-		long id = 7811265834188l;
+		long id = 8011165800086l;
 		HttpEntity<Applicant> entity = new HttpEntity<>(null, httpHeaders);
 		ResponseEntity<Applicant> applicantResponseEntity;
 		applicantResponseEntity = testRestTemplate.exchange(createURLWithPort("/applicants/"+id),
@@ -57,9 +57,10 @@ public class ApplicantControllersIT
 	}
 
 	@Test
-	public void givenCorrectAddressDeatilsCheckIfCorrectDetailsAreCreated(){
+	public void givenCorrectAddressDeatilsCheckIfCorrectDetailsAreCreated() throws Exception
+	{
 		Applicant applicant = new Applicant();
-		applicant.setId( 7902225834187l);
+		applicant.setId( 78011165800086l);
 		applicant.setFirstName( "Johan" );
 		applicant.setLastName( "Smith" );
 		HttpEntity<Applicant> entity = new HttpEntity<>(applicant, httpHeaders);

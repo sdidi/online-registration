@@ -1,6 +1,7 @@
 package com.registrationonline.customerregistration.service;
 
 import com.registrationonline.customerregistration.domain.Applicant;
+import com.registrationonline.customerregistration.errorhandling.ResourceNotFoundException;
 import com.registrationonline.customerregistration.repository.ApplicantRepository;
 import java.util.*;
 import lombok.extern.slf4j.Slf4j;
@@ -16,8 +17,17 @@ public class ApplicantServiceImpl implements  ApplicantService
 	@Override
 	public Applicant findApplicantById( Long id )
 	{
-		log.info( "This method takes an Id and returns the applicant" );
-		return applicantRepository.findById( id ).get();
+		log.info( "This method takes an Id and returns the applicant with id "+id );
+		Applicant applicant = null;
+		try
+		{
+			applicant = applicantRepository.findById( id )
+					.orElseThrow( () -> new ResourceNotFoundException( "Applicant not found with id = " + id ) );
+		}
+		catch(ResourceNotFoundException rs){
+			log.info( rs.getMessage() );
+		}
+		return applicant;
 	}
 
 	@Override
@@ -38,10 +48,19 @@ public class ApplicantServiceImpl implements  ApplicantService
 	public Applicant updateApplicant( Applicant applicant, Long id )
 	{
 		log.info( "This method updates the fields of an applicant" );
-		Applicant currentApplicant = applicantRepository.findById( id ).orElseThrow();
-		currentApplicant.setFirstName( applicant.getFirstName() );
-		currentApplicant.setLastName( applicant.getLastName() );
-		return applicantRepository.save( currentApplicant );
+		Applicant currentApplicant = null;
+		try
+		{
+			applicantRepository.findById( id )
+					.orElseThrow( () -> new ResourceNotFoundException( "Applicant not found with id= " + id ) );
+			currentApplicant.setFirstName( applicant.getFirstName() );
+			currentApplicant.setLastName( applicant.getLastName() );
+			return applicantRepository.save( currentApplicant );
+		}
+		catch(ResourceNotFoundException rnf){
+			log.info( rnf.getMessage() );
+		}
+		return currentApplicant;
 	}
 
 	@Override
