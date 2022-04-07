@@ -39,7 +39,7 @@ public class ApplicantController
 		return applicantService.findApplicantById( id );
 	}
 
-	@PostMapping("/addapplicant")
+	@PostMapping("/addapplicants")
 	@ApiOperation( value =" Registers a new applicant",
 			notes = " Creates an applicant and save on the database ",
 			response = Applicant.class)

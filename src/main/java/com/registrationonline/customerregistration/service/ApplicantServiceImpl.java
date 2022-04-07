@@ -56,7 +56,7 @@ public class ApplicantServiceImpl implements  ApplicantService
 			currentApplicant.setFirstName( applicant.getFirstName() );
 			currentApplicant.setLastName( applicant.getLastName() );
 			return applicantRepository.save( currentApplicant );
-		}
+			}
 		catch(ResourceNotFoundException rnf){
 			log.info( rnf.getMessage() );
 		}
